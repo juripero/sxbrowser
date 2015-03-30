@@ -1,0 +1,20 @@
+{
+    "name": "mplx/sxbrowser",
+    "description": "A lightweight file browser for multiple Skylable SX cluster",
+    "homepage": "https://bitbucket.org/mplx/sxbrowser/",
+    "authors": [
+        {
+            "name": "Martin Pircher",
+            "email": "mplx+coding@donotreply.at"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "mplx/skylablesx": "dev-master",
+        "twig/twig": "1.18.0"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "2.6.5",
+        "symfony/yaml": "2.6.5"
+    }
+}

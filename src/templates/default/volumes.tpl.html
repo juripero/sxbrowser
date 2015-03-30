@@ -1,0 +1,15 @@
+{% extends "body.tpl.html" %}
+
+{% block content %}
+
+    <ul class="fa-ul">
+    {% for vol in volumes %}
+        <li>
+            <i class="fa fa-chevron-circle-right"></i>
+            <a href="/{{ vol.key }}/">{{ vol.name|escape }}</a>
+            ({{ vol.connect }})
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

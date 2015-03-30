@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>sxBrowser</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <style>
+        html * {
+            font-family: 'Droid Sans', sans-serif; !important;
+        }
+        body {
+            overflow-y: scroll;
+            margin: 0;
+            color: black;
+        }
+        a {
+            color: slategray;
+        }
+        li:hover {
+            color: gray;
+        }
+        #header {
+            background-color: gray ;
+            padding-left: 1em;
+            padding-top: 0.7em;
+            padding-bottom: 0.7em;
+        }
+        #breadcrumbs {
+            background-color: silver;
+            font-size: 16px;
+            color: black;
+            padding-left: 1em;
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+        #breadcrumbs a:hover {
+            color: AliceBlue;
+        }
+        #footer {
+            text-align: right;
+            padding-right: 1em;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            background-color: silver;
+            font-size: small;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="header">
+  <h1>{{ appTitle }}</h1>
+</div>
+
+<div id="breadcrumbs">
+    {% block breadcrumps %}{% endblock %}
+</div>
+
+<div id="content">
+    {% block content %}{% endblock %}
+</div>
+
+<div id="footer"
+    <small><a href="https://bitbucket.org/mplx/sxbrowser">sxBrowser</a></small>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+sxbrowser:
+    title:          sxBrowser                                                   # title
+    debug:          false                                                       # debugging
+    template:       default                                                     # template
+
+volumes:
+    sample:                                                                     # volume key [A-Za-z0-9]
+        volume:     sample                                                      # volume name
+        verbose:    Samplevolume                                                # volume verbose name
+        cluster:    cluster1.dummy.tld                                          # skylable sx cluster
+        port:       443                                                         # tcp port
+        authkey:    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx            # auth key
+        ssl:        true                                                        # use ssl
+        sslverify:  false                                                       # verify certificate
+    example:                                                                    # volume key [A-Za-z0-9]
+        volume:     sample                                                      # volume name
+        verbose:    Example Volume                                              # volume verbose name
+        cluster:    cluster1.dummy.tld                                          # skylable sx cluster
+        port:       443                                                         # tcp port
+        authkey:    yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy            # auth key
+        ssl:        true                                                        # use ssl
+        sslverify:  false                                                       # verify certificate
+    public:                                                                     # volume key [A-Za-z0-9]
+        volume:     test                                                        # volume name
+        verbose:    Public Directory                                            # volume verbose name
+        cluster:    cluster3.dummy.tld                                          # skylable sx cluster
+        port:       443                                                         # tcp port
+        authkey:    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx            # auth key
+        ssl:        true                                                        # use ssl
+        sslverify:  false                                                       # verify certificate
+        forcedir:   public/                                                     # force subdirectory
+    secret:                                                                     # volume key [A-Za-z0-9]
+        volume:     test                                                        # volume name
+        verbose:    Secret Directory                                            # volume verbose name
+        cluster:    cluster3.dummy.tld                                          # skylable sx cluster
+        port:       443                                                         # tcp port
+        authkey:    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx            # auth key
+        ssl:        true                                                        # use ssl
+        sslverify:  false                                                       # verify certificate
+        forcedir:   secret/                                                     # force subdirectory

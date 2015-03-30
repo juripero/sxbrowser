@@ -1,0 +1,48 @@
+{% extends "body.tpl.html" %}
+
+{% block content %}
+
+    <ul class="fa-ul">
+        <li>
+            <i class="fa fa-refresh"></i>
+            <a href="#">refresh</a>
+        </li>
+    </ul>
+
+    <ul class="fa-ul">
+        <li>
+            <i class="fa fa-folder"></i>
+            <a href="../">up</a>
+        </li>
+    {% for dir in directories %}
+        <li>
+            <i class="fa fa-folder-o"></i>
+            <a href="{{ dir.name|url_encode }}">{{ dir.name }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <ul class="fa-ul">
+    {% for file in files %}
+        <li>
+            <a title="Size: {{ file.fsize|prettyBytes(true) }}" href="?file={{ file.name|url_encode  }}"><i class="fa fa-cloud-download"></i></a>
+            <i class="fa fa-file-o"></i>
+            {{ file.name|trim('/')|escape }}
+            ({{ file.fsize|prettyBytes }})
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
+
+{% block breadcrumps %}
+
+    <a href="/"><i class="fa fa-circle"></i></a>
+    /
+    {% for dir in crumbs %}
+        <a href="{{ dir.path }}">{{ dir.name }}</a>
+        /
+    {% else %}
+        /
+    {% endfor %}
+{% endblock %}
