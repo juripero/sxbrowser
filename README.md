@@ -1,6 +1,6 @@
 # sxBrowser
 
-A lightweight file browser for multiple Skylable SX clusters.
+A lightweight read-only file browser for multiple Skylable SX clusters.
 
 System requirements: php5.4.0+, php-curl.
 

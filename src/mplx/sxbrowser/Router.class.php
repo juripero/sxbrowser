@@ -50,7 +50,24 @@ class Router
         $uri = Util::uriToPath();
 
         if (isset($_GET['file'])) {
-            die ('download not implemented :(');
+            $request = explode('/', ltrim($uri, '/'));
+            $volume = array_shift($request);
+            $path = '/' . implode('/', $request);
+
+            $forceDownload = false;
+            if (isset($_GET['forcedownload'])) {
+                $forceDownload = true;
+            }
+            if (isset($this->config['volumes'][$volume]['forcedir'])) {
+                $path = '/' . $this->config['volumes'][$volume]['forcedir'] . $path;
+            }
+
+            if (isset($this->config['volumes'][$volume])) {
+                $file = new Files($volume, $this->config, $this->services);
+                $bytes = $file->download($volume, $path . $_GET['file'], $forceDownload);
+            } else {
+                echo "Error: invalid volume";
+            }
         } elseif ($uri == '/' || $uri == '') {
             $volumes = new VolumeBrowser($this->config, $this->services);
             $volumes->render();
