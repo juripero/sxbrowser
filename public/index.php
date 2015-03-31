@@ -10,6 +10,7 @@
  **/
 
 use mplx\sxbrowser;
+
 require_once '../src/bootstrap.php';
 
 try {

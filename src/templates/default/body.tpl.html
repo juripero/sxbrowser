@@ -51,7 +51,7 @@
 <body>
 
 <div id="header">
-  <h1>{{ appTitle }}</h1>
+  <h1>{{ tplcfg.title|default('sxBrowser') }}</h1>
 </div>
 
 <div id="breadcrumbs">
@@ -63,7 +63,7 @@
 </div>
 
 <div id="footer"
-    <small><a href="https://bitbucket.org/mplx/sxbrowser">sxBrowser</a></small>
+    <small><a target="_blank" href="https://bitbucket.org/mplx/sxbrowser">sxBrowser</a></small>
 </div>
 
 </body>

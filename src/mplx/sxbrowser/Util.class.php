@@ -11,6 +11,9 @@
 
 namespace mplx\sxbrowser;
 
+/**
+* Utils
+*/
 class Util
 {
     /**
@@ -57,6 +60,15 @@ class Util
         return urldecode($uri);
     }
 
+    /**
+    * Breadcrumbs
+    *
+    * @param string $volkey
+    * @param string $path
+    * @param string $forcedir
+    * @param string $delimiter
+    * @return array
+    */
     public static function breadcrumbs($volkey, $path, $forcedir = false, $delimiter = '/')
     {
         $up = $delimiter . $volkey . $delimiter;

@@ -11,21 +11,33 @@
 
 namespace mplx\sxbrowser;
 
+/**
+* Browser available volumes
+*/
 class VolumeBrowser
 {
     private $config;
     private $services;
 
+    /**
+    * Constructor
+    *
+    * @param array $config
+    * @param array $services
+    */
     public function __construct($config, $services)
     {
         $this->config = $config;
         $this->services = $services;
     }
 
+    /**
+    * Render with twig
+    */
     public function render()
     {
         $volumes = array();
-        foreach($this->config['volumes'] as $key => $vol) {
+        foreach ($this->config['volumes'] as $key => $vol) {
             if ($vol['verbose']) {
                 $volumes[] = array (
                     'key' => $key,

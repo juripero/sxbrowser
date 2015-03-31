@@ -13,6 +13,9 @@ namespace mplx\sxbrowser;
 
 use \mplx\skylablesx\Sx;
 
+/**
+* Browse directory tree
+*/
 class TreeBrowser
 {
     private $config;
@@ -23,6 +26,13 @@ class TreeBrowser
     private $files = array();
     private $lastpath = '/';
 
+    /**
+    * Constructor
+    *
+    * @param string $volkey
+    * @param array $config
+    * @param array $services
+    */
     public function __construct($volkey, $config, $services)
     {
         $this->config = $config['volumes'][$volkey];
@@ -59,6 +69,12 @@ class TreeBrowser
         }
     }
 
+    /**
+    * fetch contents of path
+    *
+    * @param string $path
+    * @param string $forcedir
+    */
     public function fetch($path, $forcedir = false)
     {
         $this->forcedir = $forcedir;
@@ -77,6 +93,9 @@ class TreeBrowser
         return $this->files;
     }
 
+    /**
+    * render with twig
+    */
     public function render()
     {
         echo $this->services['twig']->render(
@@ -90,6 +109,13 @@ class TreeBrowser
         );
     }
 
+    /**
+    * extract directories from list
+    *
+    * @param array $list
+    * @param string $stripstr
+    * @return array
+    */
     private static function getDirs($list, $stripstr = false)
     {
         $dir = array();
@@ -106,6 +132,13 @@ class TreeBrowser
         return $dir;
     }
 
+    /**
+    * extract files from list
+    *
+    * @param array $list
+    * @param string $stripstr
+    * @return array
+    */
     private static function getFiles($list, $stripstr = false)
     {
         $files = array();

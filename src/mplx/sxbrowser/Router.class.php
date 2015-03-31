@@ -32,10 +32,11 @@ class Router
             $this->services['twig']->enableDebug();
             $this->services['twig']->addExtension(new \Twig_Extension_Debug());
         }
-        if (isset($this->config['sxbrowser']['title'])) {
-            $this->services['twig']->addGlobal('appTitle', $this->config['sxbrowser']['title']);
-        } else {
-            $this->services['twig']->addGlobal('appTitle', 'sxBrowser');
+        if (isset($this->config['template'][$this->config['sxbrowser']['template']])) {
+            $this->services['twig']->addGlobal(
+                'tplcfg',
+                $this->config['template'][$this->config['sxbrowser']['template']]
+            );
         }
         $filter = new \Twig_SimpleFilter('prettyBytes', '\mplx\sxbrowser\Util::prettyBytes');
         $this->services['twig']->addFilter($filter);

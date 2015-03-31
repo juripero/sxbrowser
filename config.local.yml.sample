@@ -1,5 +1,4 @@
 sxbrowser:
-    title:          sxBrowser                                                   # title
     debug:          false                                                       # debugging
     template:       default                                                     # template
 
@@ -38,3 +37,8 @@ volumes:
         ssl:        true                                                        # use ssl
         sslverify:  false                                                       # verify certificate
         forcedir:   secret/                                                     # force subdirectory
+
+template:                                                                       # template settings
+    default:                                                                    # template name
+        title:          sxBrowser                                               # title
+        hidecluster:    true                                                    # hide vol@cluster on main page
